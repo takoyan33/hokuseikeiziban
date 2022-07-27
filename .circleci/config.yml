@@ -26,8 +26,8 @@ jobs:
       BUNDLE_RETRY: "3"
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
-    working_directory: ~/hokuseikeiziban
-/src
+    working_directory: ~/hokuseikeiziban/src
+
     steps:
       - checkout:
           path: ~/hokuseikeiziban
