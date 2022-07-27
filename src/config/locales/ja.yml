@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        password: パスワード
+      board:
+        title: タイトル
+        body: 本文

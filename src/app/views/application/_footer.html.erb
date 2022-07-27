@@ -1,0 +1,66 @@
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <!-- Section: Social media -->
+<br>
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>北星学園大学掲示板
+          </h6>
+          <p>
+          北星学園大学掲示板では、北星学園大学で悩んでいることや聞きたいことについて気軽に質問することができます。
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            メニュー
+          </h6>
+          <p>
+            <%= link_to 'ホーム', root_path, class: 'text-reset' %>
+          </p>
+          <p>
+              <%= link_to '掲示板一覧', boards_path, class: 'text-reset' %>
+          </p>
+          <% if @current_user %>
+          <p>
+            <%= link_to 'マイページ', mypage_path, class: 'text-reset' %>
+          </p>
+          <p>
+          <%= link_to 'ログアウト', logout_path, class: 'text-reset' %>
+          </p>
+          <% else %>
+          <p>
+            <%= link_to '登録', new_user_path, class: 'text-reset' %>
+          </p>
+          <p>
+          <%= link_to 'ログイン', root_path, class: 'text-reset' %>
+          </p>
+        <% end %>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2022 Copyright
+    <a class="text-reset fw-bold" href="">北星学園大学掲示板</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
