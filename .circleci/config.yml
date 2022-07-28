@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.7
-    working_directory: ~/rails-docker-3-1/src
+    working_directory: ~/hokuseikeiziban/src
     steps:
       - checkout:
           path: ~/hokuseikeiziban
