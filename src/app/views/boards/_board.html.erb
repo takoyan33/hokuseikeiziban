@@ -47,6 +47,9 @@
 <br>
         <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true"></i>　更新日　<%= board.updated_at.to_s(:datetime_jp) %></p>
     <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true"></i>　公開日　<%= board.created_at.to_s(:datetime_jp) %></p>
-    
+<br>
+<div id="bookmark_button_<%= @board.id %> ">
+    <%= render "bookmarks/bookmark", board: @board %>
+</div>
   </div>
 </div>
