@@ -1,4 +1,4 @@
-<% if board.bookmarked_by?(current_user) %>
+<% if @board.bookmarked_by?(@current_user) %>
   <%= link_to "", board_bookmarks_path(board), method: :delete, remote: true, class: "fas fa-bookmark" %></td>
 <% else %>
   <%= link_to "", board_bookmarks_path(board), method: :post, remote: true, class: "far fa-bookmark" %></td>

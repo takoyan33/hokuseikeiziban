@@ -27,8 +27,9 @@ class Board < ApplicationRecord
   scope :created_today, -> { where(created_at: Time.zone.now.all_day) } # 今日
   scope :created_last_month, -> { where(created_at: Time.zone.now.prev_month.all_day) } # １ヶ月前の投稿
   scope :created_month, -> { where(created_at: Time.zone.now.all_month) } # 今月の投稿
-  has_many :bookmarks, dependent: :destroy
+  # has_many :bookmarks, dependent: :destroy
 
-  def bookmarked_by?(user)
-    bookmarks.where(user_id: user).exists? 
+  # def bookmarked_by?(user)
+  #   bookmarks.where(user_id: user).exists? 
+  # end
 end

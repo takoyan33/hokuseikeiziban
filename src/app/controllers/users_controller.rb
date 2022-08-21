@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 
   def show
   @user = User.find(params[:id])
+  #userを特定
   if @user == @current_user
     redirect_to mypage_path
     #もしusers詳細ページがcurrent_userならmeページにリダイレクトする
@@ -40,8 +41,10 @@ class UsersController < ApplicationController
 
   def update
     user = @current_user
+    #現在userを入れる
     if user.update(user_params)
       session[:user_id] = user.id
+      #sessionにuseridを入れる
       redirect_to mypage_path
     else
       flash[:error_messages] = user.errors.full_messages

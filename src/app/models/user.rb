@@ -35,5 +35,7 @@ class User < ApplicationRecord
     length: {maximum:16}
   validates :password,
     length: {minimum: 8 }
+
+  
   has_many :bookmarks, dependent: :destroy
 end

@@ -24,16 +24,11 @@
       <% end %>
     <p>投稿者名　<%= @board.user.name %> </p>
     <p><%= link_to '投稿者のプロフィール', user_path(board.user_id), class: 'btn btn-outline-dark' %></p>
-<p><i class="fa fa-heart" aria-hidden="true"></i>　いいね数: <%= @board.likes.count %></h3>
-<% if @current_user %>
-<% if @current_user.already_liked?(@board) %>
-  <%= button_to 'いいねを取り消す', board_like_path(@board), method: :delete %>
-<% else %>
-  <%= button_to 'いいね', board_likes_path(@board) %>
-<% end %>
-<% else %>
-<p>ログインするといいねできます。</p>
-<% end %>
+
+
+<%= render 'likes/like' %>
+
+
 <p>いいねしたユーザー</p>
 
 <% @board.liked_users.each do |user| %>
@@ -48,8 +43,5 @@
         <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true"></i>　更新日　<%= board.updated_at.to_s(:datetime_jp) %></p>
     <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true"></i>　公開日　<%= board.created_at.to_s(:datetime_jp) %></p>
 <br>
-<div id="bookmark_button_<%= @board.id %> ">
-    <%= render "bookmarks/bookmark", board: @board %>
-</div>
   </div>
 </div>

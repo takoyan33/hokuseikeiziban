@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   post 'contacts/done', to: 'contacts#done', as: 'contact_done'
 
   get "search" => "searches#search"
-  resource :bookmarks, only: [:create, :destroy]
+  resources :boards, except: [:index] do
+    resource :bookmarks, only: [:create, :destroy]
+  end
 end

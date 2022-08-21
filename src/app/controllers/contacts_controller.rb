@@ -5,7 +5,9 @@ class ContactsController < ApplicationController
    
     def confirm
       @contact = Contact.new(contact_params)
+      #contacを作る
       if @contact.valid?
+      #contactにバリデーションが実行されると
         render :action => 'confirm'
       else
         render :action => 'index'
@@ -15,6 +17,7 @@ class ContactsController < ApplicationController
     def done
       @contact = Contact.new(contact_params)
       if params[:back]
+      #backだった場合
         render :action => 'index'
       else
         ContactMailer.send_mail(@contact).deliver_now

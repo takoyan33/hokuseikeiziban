@@ -37,29 +37,36 @@ class BoardsController < ApplicationController
     board.image.attach(params[:board][:image])
     #画像投稿処理
     if board.save
+    #掲示板作成
       flash[:notice] = "「#{board.title}」の掲示板を作成しました"
       redirect_to board
+    #掲示板ページに移動
     else
       redirect_back fallback_location: root_path, flash: {
+      #rootに戻る
         board: board,
         error_messages: board.errors.full_messages
+      #boardのエラーメッセージを入れる
       }
     end
   end
 
   def show
     @comment = Comment.new(board_id: @board.id)
+    #commenを作成する
     @user = User.find(@board.user_id)
+    #boardのuserを作成する
     @like = Like.new
   end
 
   def edit
     @board.attributes = flash[:board] if flash[:board]
+    #attributesはモデルオブジェクトと属性を取得
   end
 
   def update
     if @board.update(board_params)
-      redirect_to @board
+      redirect_to board
     else
       redirect_back fallback_location: root_path , flash: {
         board: @board,
