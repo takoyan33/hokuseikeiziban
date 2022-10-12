@@ -12,7 +12,13 @@
       <div class="tab-content">
         <div id="photo1" class="tab-pane active">
           <div class="d-lg-flex align-items-center">
-  <h1>北星掲示板一覧</h1>
+          <br>
+          <br>
+          <br>
+  <h2>掲示板一覧</h2>
+  <br>
+  <br>
+  <br>
   <div class="ml-auto boards__linkBox">
       <%= form_with url: boards_path, method: :get, class: 'boards__searchForm' do %>
         <%= select_tag :tag_id, 
@@ -31,7 +37,7 @@
     <% end %>
   </div>
 </div>
-<p>北星掲示板では、大学生活についての悩みを書き込めます</p>
+<p>ほくせいBoardでは、大学生活についての悩みを書き込めます</p>
 <% if flash[:notice] %>
   <div class="alert alert-danger"><%= flash[:notice] %></div>
 <% end %>
@@ -67,11 +73,16 @@
 
 <%= paginate @boards %>
                   </div>
+
         <div id="photo2" class="tab-pane">
         <div class="d-lg-flex align-items-center">
-  <h1>北星掲示板一覧</h1>
-
-  
+        <br>
+        <br>
+        <br>
+  <h2>掲示板一覧</h2>
+  <br>
+  <br>
+  <br>
   <div class="ml-auto boards__linkBox">
     <% if @current_user %>
     <%= link_to '新しく投稿する', new_board_path, class:"btn btn-outline-dark" %>
@@ -84,7 +95,7 @@
         <%= f.submit %>
     <% end %>
 </div>
-<p>北星掲示板では、大学生活についての悩みを書き込めます</p>
+<p>ほくせいBoardでは、大学生活についての悩みを書き込めます</p>
 <% if flash[:notice] %>
   <div class="alert alert-danger"><%= flash[:notice] %></div>
 <% end %>
@@ -92,7 +103,6 @@
 <li>投稿数　全<%= @boards_count %>件</li>
 </ul>
 <%# <p>並び替え 古い順　新しい順　いいねが多い順　コメントが多い順</p> %>
-
 <div class="row">
     <% @boards.each do |board| %>
       <div class="col-sm-6">
@@ -110,13 +120,14 @@
       <%= image_tag "noimage.png", class:"img-thumbnail" , style:" width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"%>
       <% end %>
       <%= board.user.name %>　<i class="fa fa-clock-o" aria-hidden="true"></i><%= board.created_at.to_s(:datetime_jp) %></p>
+      <br>
         <% end %>
     </div>
+    <br>
 </div>
     <% end %>
 </div>
 
 <%= paginate @boards %>
-        </div>
-      </div>
-
+                  </div>
+                  </div>

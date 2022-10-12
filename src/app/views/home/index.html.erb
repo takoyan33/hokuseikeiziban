@@ -1,16 +1,45 @@
-<h1>北星学園大学掲示板にようこそ</h1>
+<br>
+<br>
+<p  class="text-center">
+<%= image_tag "hokuseiboad.png", style:" width: 250px; height: 130px; "; %>
+</p>
+<br>
+<br>
+<p>ほくせいBoardでは、北星学園大学に関する悩んでいることや聞きたいことについて気軽に質問することができます。<br>主に大学生活、サークル、ゼミなどについて投稿できます。</p>
+<p>北星学園大学に在籍している生徒は誰でも質問、回答できます！</p>
+<p>※不適切な内容やほくせいBoardに関係がない私的な内容を投稿した場合は、削除する場合があるのでご了承ください。</p>
 
-<p>北星学園大学掲示板では、北星学園大学で悩んでいることや聞きたいことについて気軽に質問することができます。</p>
+<%#= line_chart @data %>
 
-<%= line_chart @data %>
+<%#= react_component('HelloMessage', name: 'Mike') %>
 
-<%= react_component('HelloMessage', name: 'Mike') %>
-
+<h2 class="">機能一覧</h2>
+<div class="row">
+<div class="m-5 col-md">
+<p class="text-center"> <%= image_tag "topimage1.png", class:"img-thumbnail", style:" width: 100px; height: 100px; "; %></p>
+<h3 class="text-center">掲示板機能</h3>
+<p>掲示板を投稿でき、投稿した掲示板の削除、更新などを行えます。<br>また、掲示板にコメントすることも可能です。</p>
+</div>
+<div class="m-5 col-md ">
+<p class="text-center"> <%= image_tag "topimage2.png", class:"img-thumbnail", style:" width: 100px; height: 100px; "; %></p>
+<h3 class="text-center">ユーザー登録機能</h3>
+<p>ユーザー登録すると投稿のいいねや記事の投稿ができます</p>
+</div>
+<div  class="m-5 col-md">
+<p class="text-center"> <%= image_tag "topimage3.png", class:"img-thumbnail", style:" width: 100px; height: 100px; "; %></p>
+<h3 class="text-center">お問い合せ機能</h3>
+<p>もし困った点があれば、お問い合わせから問い合わせることができます。</p>
+</div>
+</div>
 
 <% if @current_user %>
+<div class="text-center">
 <%= link_to '掲示板はこちら', boards_path, class: 'btn btn-primary'  %>
+</div>
 <% else %>
 <%= render partial: 'users/login_form' %>
 <br>
+<div class="text-center">
 <%= link_to '新規登録はこちら', new_user_path, class: 'btn btn-primary'  %>
+</div>
 <% end %>

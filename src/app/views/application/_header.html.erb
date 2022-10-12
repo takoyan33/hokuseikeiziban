@@ -7,7 +7,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-link">
-        <%= link_to 'ホーム', root_path  %>
+        <%= link_to root_path do  %>
+        <%= image_tag "hokuseiboad.png", class:"img-thumbnail", style:" width: 70px; height: 35px; "; %>
+        <% end %>
       </li>
       <li class=" nav-link">
         <%= link_to '掲示板一覧', boards_path  %>
